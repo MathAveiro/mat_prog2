@@ -1,4 +1,3 @@
-
 public class Complexo {
 	private double re;
 	private double im;
