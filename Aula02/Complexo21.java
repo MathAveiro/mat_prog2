@@ -1,8 +1,8 @@
-public class Complexo {
+public class Complexo21 {
 	private double re;
 	private double im;
 
-	public Complexo(double real, double imag) {
+	public Complexo21(double real, double imag) {
 		re = real;
 		im = imag;
 	}
@@ -23,4 +23,4 @@ public class Complexo {
 		return Math.atan2(im, re);
 	} 
 
-} 
+}
