@@ -19,7 +19,7 @@ public class p32
          datas[i].escreve();
          out.println();
       }
-   }
+   } 
 
    static void sort(Data[] datas)
    {
