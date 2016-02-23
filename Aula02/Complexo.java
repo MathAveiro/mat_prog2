@@ -23,4 +23,4 @@ public class Complexo {
 		return Math.atan2(im, re);
 	} 
 
-}
+} 
