@@ -10,8 +10,6 @@ public class exercicio42 {
 	public static void main (String[] args) {
 		
 	GuessGame42 nAdivinha;
-		
-		int count;
 
 		if (args.length != 0) {
 
@@ -26,8 +24,6 @@ public class exercicio42 {
 		} else nAdivinha = new GuessGame42();
 
 		do {
-
-			count = nAdivinha.numAttempts();
 
 			out.printf("Command: ");
 			int op = sc.nextInt();
@@ -46,13 +42,13 @@ public class exercicio42 {
 			
 				out.printf("O número introduzido é menor do que o número secreto\n");
 			
-				out.println("tentativas: " + count);
+				out.println("tentativas: " + nAdivinha.numAttempts());
 
 			} else if (nAdivinha.attemptIsHigher()) {
 
 				out.printf("O número introduzido é maior do que o número secreto\n");
 
-				out.println("tentativas: " + count);
+				out.println("tentativas: " + nAdivinha.numAttempts());
 
 			}
 
@@ -60,7 +56,7 @@ public class exercicio42 {
 
 		} while (!nAdivinha.finished());
 
-		out.printf("Número de tentativas: %d\n", count);
+		out.printf("Número de tentativas: %d\n", nAdivinha.numAttempts());
 
 	}
 

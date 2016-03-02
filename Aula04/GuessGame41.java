@@ -56,7 +56,7 @@ public class GuessGame41
 
    public int numAttempts () {
 
-      return this.count+=1;  
+      return this.count;  
 
    }
 
@@ -71,6 +71,8 @@ public class GuessGame41
    public void play (int a) {
 
       if (!finished() && validAttempt(a)) {
+
+         this.count++;
 
          this.numIntroduzido = a; 
 
