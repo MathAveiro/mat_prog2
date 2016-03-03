@@ -97,8 +97,7 @@ public class GuessGame41
 
    }
 
-      public static void main(String[] args)
-   {
+      public static void main(String[] args) {
       out.println("Starting test.");
       GuessGame41 game = new GuessGame41(1,10);
       assert !game.finished();
