@@ -17,6 +17,7 @@ public class Caixa {
 		long totalRetirado=0;
 		int l=0;
 		long sum=0;
+		long nv=valor;
 		for(int i=0; i<moedas.length; i++) {
 			sum=sum+moedas[i];
 		}

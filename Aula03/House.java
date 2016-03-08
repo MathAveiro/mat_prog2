@@ -1,8 +1,8 @@
 public class House {
-	static int count=0;
-	static String houseType;
-	static int nDiv, addDiv;
-	static Room[] rooms;
+	private int count=0;
+	private String houseType;
+	private int nDiv, addDiv;
+	private Room[] rooms;
 	public House(String houseType) {
 		this.houseType=houseType;
 		nDiv=8;
