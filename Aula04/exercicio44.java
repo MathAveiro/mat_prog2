@@ -24,13 +24,13 @@ public class exercicio44 {
 					break;
 				case 2:
 					System.out.print("Valor mínimo a retirar: ");
-          			long valorMin = sc.nextLong();
-          			long r[] = c.retirarDinheiro(valorMin);
-          			if(r[0]!=-1){
-          				for(int i=0; i<r.length; i++)
-            				System.out.println(r[i]);
-            		}
-            		System.out.println();
+						long valorMin = sc.nextLong();
+						long r[] = c.retirarDinheiro(valorMin);
+						if(r[0]!=-1){
+							for(int i=0; i<r.length; i++)
+							System.out.println(r[i]);
+					}
+					System.out.println();
 					break;
 				case 3:
 					long a[] = c.moedas();

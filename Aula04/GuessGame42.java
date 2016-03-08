@@ -1,104 +1,103 @@
 import static java.lang.System.*;
 
-public class GuessGame42
-{
+	public class GuessGame42
 
-   private static int  min, max, secretNumber, count=0, numIntroduzido;
+	{
 
-  public GuessGame42 () {
+	private static int  min, max, secretNumber, count=0, numIntroduzido;
 
-      this.min = 0;
+	public GuessGame42 () {
 
-      this.max = 20;
+		this.min = 0;
 
-      do {
+		this.max = 20;
 
-         this.secretNumber = (int)(Math.random()*(100));
+		do {
 
-         out.println(secretNumber);
+			this.secretNumber = (int)(Math.random()*(100));
 
-      } while (this.secretNumber < this.min || this.secretNumber > this.max);
+			out.println(secretNumber);
 
-   }
+		} while (this.secretNumber < this.min || this.secretNumber > this.max);
 
-   public GuessGame42 (int min, int max) {
+	}
 
-      this.min = min;
+	public GuessGame42 (int min, int max) {
 
-      this.max = max;
+		this.min = min;
 
-      do {
+		this.max = max;
 
-         this.secretNumber = (int)(Math.random()*(100));
+		do {
 
-         out.println(secretNumber);
+			this.secretNumber = (int)(Math.random()*(100));
 
-      } while (this.secretNumber < this.min || this.secretNumber > this.max);
+			out.println(secretNumber);
 
-   }
+		} while (this.secretNumber < this.min || this.secretNumber > this.max);
 
-   public int min () {
+	}
 
-      return this.min;
+	public int min () {
 
-   }
+		return this.min;
 
-   public int max () {
+	}
 
-      return this.max;
+	public int max () {
 
-   }
+		return this.max;
 
-   public boolean finished () {
+	}
 
-      if (this.numIntroduzido == secretNumber) return true;
+	public boolean finished () {
 
-      else return false;
+		if (this.numIntroduzido == secretNumber) return true;
 
+		else return false;
 
-   }
+	}
 
-   public int numAttempts () {
+	public int numAttempts () {
 
-      return this.count;  
+		return this.count;
 
-   }
+	}
 
-   public boolean validAttempt (int a) {
+	public boolean validAttempt (int a) {
 
-      if (a < min || a > max) return false;
-      
-      else return true;
+		if (a < min || a > max) return false;
 
-   }
+		else return true;
 
-   public void play (int a) {
+	}
 
-      if (!finished() && validAttempt(a)) {
+	public void play (int a) {
 
-         this.count++;
+		if (!finished() && validAttempt(a)) {
 
-         this.numIntroduzido = a; 
+			this.count++;
 
-      }
+			this.numIntroduzido = a; 
 
-   }
+		}
 
-   public boolean attemptIsLower () {
+	}
 
-      if (numIntroduzido < secretNumber) return true;
+	public boolean attemptIsLower () {
 
+		if (numIntroduzido < secretNumber) return true;
 
-      else return false;
+		else return false;
 
-   }
+	}
 
-   public boolean attemptIsHigher () {
+	public boolean attemptIsHigher () {
 
-      if (numIntroduzido > secretNumber) return true;
+		if (numIntroduzido > secretNumber) return true;
 
-      else return false;
+		else return false;
 
-   }
+	}
 
 }
