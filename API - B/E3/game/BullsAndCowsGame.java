@@ -14,15 +14,28 @@ public class BullsAndCowsGame
     */
    public static boolean validAlphabet(String alphabet)
    {
+      boolean diferente=true;
+      for (int i=0; i<alphabet.length(); i++) {
+        for (int j=i+1; j<alphabet.length(); j++) {
+          if(alphabet.charAt(j)==alphabet.charAt(i)) {
+            diferente=false;
+            break;
+          }
+        }
+        if(!diferente) {
+          out.println("ERROR: invalid alphabet "+alphabet+"!");
+          break;
+        }
+      }
       return alphabet != null && alphabet.length() > 0;
    }
 
    /*
     * novo jogo com um alfabeto e o número de símbolos a descobrir
     */
-   private BullsAndCowsGame(String alphabet, int gameNumSimbols, String playerName)
+   public BullsAndCowsGame(String alphabet, int gameNumSimbols, String playerName)
    {
-      assert validAlphabet(alphabet) == 1;
+      assert validAlphabet(alphabet);
       assert gameNumSimbols > 0;
       assert playerName != null && playerName.length() > 0;
 
@@ -39,7 +52,7 @@ public class BullsAndCowsGame
     * (Uma tentativa é válida se tiver o número de caracteres correcto (igual ao do segredo)
     * e se só contiver símbolos do alfabeto definido.)
     */
-   public int validGuess(String guess)
+   public boolean validGuess(String guess)
    {
       boolean result = guess != null && guess.length() == secret.length();
 
