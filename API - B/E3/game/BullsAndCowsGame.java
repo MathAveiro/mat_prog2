@@ -24,6 +24,7 @@ public class BullsAndCowsGame
         }
         if(!diferente) {
           out.println("ERROR: invalid alphabet "+alphabet+"!");
+          exit(3);
           break;
         }
       }

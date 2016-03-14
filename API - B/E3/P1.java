@@ -14,7 +14,20 @@ public class P1
          exit(1);
       }
       String alphabet = args[0];
-
+      boolean dif=true;
+      for (int i=0; i<alphabet.length(); i++) {
+        for (int j=i+1; j<alphabet.length(); j++) {
+          if(alphabet.charAt(j)==alphabet.charAt(i)) {
+            dif=false;
+            break;
+          }
+        }
+        if(!dif) {
+          out.println("ERROR: invalid alphabet "+alphabet+"!");
+          exit(3);
+          break;
+        }
+      }
       for(int i=0; i<args[1].length(); i++){
       	char temp = args[1].charAt(i);
       	if(!Character.isDigit(temp)){
@@ -77,6 +90,8 @@ public class P1
 	      	n++;
 	      } 
 	  } while(r.equals("Y") || r.equals("y"));
+	  out.println();
+	  out.println("Finale results:");
 	  for (int i=0; i<points.length; i++) {
 	      out.println(points[i]);
 	  }
