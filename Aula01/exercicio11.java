@@ -18,6 +18,7 @@ public class exercicio11 {
 		campos = operacao.split(" ");
 
 		int op1 = parseInt(campos[0]);
+        
 		int op2 = parseInt(campos[2]);
 
 		if(campos[1].compareTo("+")==0) resultado=op1+op2;
