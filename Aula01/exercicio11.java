@@ -10,6 +10,7 @@ public class exercicio11 {
 	public static void main(String[] args) {
 
 		String[]campos;
+        
 		int resultado=0;
 
 		out.printf("Introduza a operação matemática");
