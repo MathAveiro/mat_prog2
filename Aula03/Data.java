@@ -37,7 +37,6 @@
    				else return false;
    			}
    		}
-   		
 	}
 	public boolean menorDoQue(Data a){
     	if(ano()>a.ano()) return false;
@@ -50,7 +49,6 @@
     			else return false;
     		}
     	}
-   		
 	}
 	public void escreve() {
 		 System.out.printf("%02d-%02d-%04d", dia(), mes(), ano());

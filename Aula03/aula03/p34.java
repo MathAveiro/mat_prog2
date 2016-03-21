@@ -20,7 +20,8 @@ public class p34
       out.print(" a ");
       d2.escreve();
       out.println(":");
-      for(int i = 0; i < todo.length; i++) 
+      for(int i = 0; i < todo.length; i++)
          todo[i].escreve();
    }
 }
+

@@ -74,13 +74,14 @@ public class House {
 	}
 	public double averageRoomDistance() {
 		double mdist=0.0;
+		int k=0;
 		for (int i=0; i<count; i++) {
-			int j=0;
-			do {
-				mdist=mdist+rooms[i].geomCenter().distTo(rooms[j].geomCenter());
-				j++;
-			}while(j<count);
+			for(int j=i; j<count; j++) {
+				if(j==count-1) break;
+				mdist=mdist+rooms[i].geomCenter().distTo(rooms[j+1].geomCenter());
+				k++;
+			}
 		}
-		return mdist/count;
+		return mdist/k;
 	}
 }
