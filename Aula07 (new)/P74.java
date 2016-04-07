@@ -1,7 +1,7 @@
 import static java.lang.System.*;
 import java.util.Scanner;
 
-public class p73
+public class P74
 {
    static Scanner sc = new Scanner(System.in);
 

@@ -1,6 +1,6 @@
 import static java.lang.System.*;
 
-public class p75
+public class P76
 {
    public static void main(String[] args)
    {
@@ -13,22 +13,22 @@ public class p75
       }
       catch (ArrayIndexOutOfBoundsException e) {
          out.println("ERRO: número de argumentos insuficiente");
-         out.println("Uso: java -ea p75 <number> <epsilon> <init>");
+         out.println("Uso: java -ea P76 <number> <epsilon> <init>");
          exit(1);
       }
       catch (NumberFormatException e) {
          out.println("ERRO: formato inválido");
-         out.println("Uso: java -ea p75 <number> <epsilon> <init>");
+         out.println("Uso: java -ea P76 <number> <epsilon> <init>");
          exit(1);
       }
 
-      double root = squareRoot(number,epsilon,init);
+      double root = squareRoot(number,init,0);
 
       out.println("Raiz quadrada de "+number+": "+root);
 
    }
 
-   static double squareRoot(double number, double epsilon, double initRoot)
+   static double squareRoot(double number, double initRoot, int iter)
    {
       // Completar
       return 0.0;
