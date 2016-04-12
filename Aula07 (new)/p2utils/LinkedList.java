@@ -175,7 +175,24 @@ public class LinkedList<E> {
        
    }
    
-   public void remove (E e) {
+    public void remove(E e) {
+
+      assert contains(e);
+
+      first = remove(first, e);
+
+      size--;
+   }
+   private Node<E> remove(Node<E> first, E e) {
+
+      if(first.elem.equals(e)) return first;
+
+      first.next = remove(first.next, e);
+      
+      return first = (first.next, e);
+   }
+   
+   /*public void remove (E e) {
        
        remove(first, e);
        
@@ -205,7 +222,7 @@ public class LinkedList<E> {
             
        }
        
-   }
+   }*/
 
    private Node<E> first = null;
    private Node<E> last = null;
