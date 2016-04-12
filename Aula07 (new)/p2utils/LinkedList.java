@@ -194,7 +194,7 @@ public class LinkedList<E> {
    
    /*public void remove (E e) {
        
-       remove(first, e);
+       remove(first, e); 
        
    }
    
