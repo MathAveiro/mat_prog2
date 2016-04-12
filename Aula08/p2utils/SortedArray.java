@@ -1,13 +1,25 @@
 package p2utils;
 
-public class SortedList<E extends Comparable<E>> {
+public class SortedArray<E extends Comparable<E>> {
 
-   public SortedList() { }
+    private int arrayLength;        
+
+   public SortedArray(int arrayLength) { 
+       
+       this.arrayLength = arrayLength;
+       
+   }
 
    /**
     * @return Number of elements in the list
     */
    public int size() { return size; }
+
+   public int arrayLength () { 
+       
+       return this.arrayLength;
+   
+   }
 
    /**
     * Checks if the list is empty
@@ -28,8 +40,14 @@ public class SortedList<E extends Comparable<E>> {
     * @param e the element to be inserted
     */
    public void insert(E e) {
-      first = insert(first,e);
-      size++;
+      
+      if (!isFull()) {
+          
+        first = insert(first,e);
+        size++;    
+          
+      } else return;
+      
    }
    private Node insert(Node<E> n,E e) {
        
@@ -80,6 +98,14 @@ public class SortedList<E extends Comparable<E>> {
        if (n.elem.equals(e)) return true;
 
        return contains (n.next, e);
+       
+   }
+   
+   public boolean isFull() {
+       
+       if (size == arrayLength) return true;
+       
+       else return false;
        
    }
 

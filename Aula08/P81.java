@@ -67,9 +67,6 @@ public class P81 {
            
        }
         
-        if(number.contains(23)) out.println("contem");
-        else out.println("não contem");
-       
        int size = number.size();
        
        for(int i = 0; i < size; i++) {
