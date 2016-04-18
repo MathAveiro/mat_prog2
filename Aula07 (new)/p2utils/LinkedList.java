@@ -179,17 +179,17 @@ public class LinkedList<E> {
 
       assert contains(e);
 
-      first = remove(first, e);
+      first = remove(e, first);
 
       size--;
    }
-   private Node<E> remove(Node<E> first, E e) {
+   private Node<E> remove(E e, Node<E> n) {
 
-      if(first.elem.equals(e)) return first;
+      if(n.elem.equals(e)) return n.next;
 
-      first.next = remove(first.next, e);
+      n.next = remove(e, n.next);
       
-      return first = (first.next, e);
+      return n;
    }
    
    /*public void remove (E e) {

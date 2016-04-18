@@ -88,7 +88,7 @@ public class SortedList<E extends Comparable<E>> {
       if(first==null) return temp+"]";
       else {
         if(first.next==null) temp = temp +first.elem+" ";
-        else temp = temp +first.elem+",";
+        else temp = temp +first.elem+" , ";
         return toString(temp, first.next);
       }
    }
