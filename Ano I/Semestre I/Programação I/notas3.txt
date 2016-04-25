@@ -1,6 +1,0 @@
-﻿Informações do aluno aprovado: NºMecanográfico: 1	Nota obtida em época normal: 15	Nota obtida em época de recurso: 13	Nota final: 15
-
-Informações do aluno aprovado: NºMecanográfico: 2	Nota obtida em época normal: 77	Nota obtida em época de recurso: 18	Nota final: 18
-Informações do aluno aprovado: NºMecanográfico: 6	Nota obtida em época normal: 3	Nota obtida em época de recurso: 15	Nota final: 15
-
-Informações do aluno aprovado: NºMecanográfico: 8	Nota obtida em época normal: 14	Nota obtida em época de recurso: 15	Nota final: 15
