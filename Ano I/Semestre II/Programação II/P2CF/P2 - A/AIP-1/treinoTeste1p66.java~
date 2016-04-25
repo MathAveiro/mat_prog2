@@ -1,0 +1,26 @@
+import static java.lang.System.*;
+import java.util.Scanner;
+
+public class treinoTeste1p66
+{
+  public staic void main (String[]args)
+  {
+    Scanner sc = new Scanner(System.in);
+    String pal1, pal2;
+    
+    if(args.length!=2)
+    {
+      out.println("Insira duas palavras:");
+      out.print("Palavra 1: ");
+      pal1=sc.nextLine();
+      out.print("Palavra 2: ");
+      pal2=sc.nextLine();
+    }
+    
+    else
+    {
+      pal1=args[0];
+      pal2=args[1];
+    }
+  }
+}

@@ -1,0 +1,34 @@
+public class Stack<T>
+{
+  public Stack<T>()
+  {
+    int maxSize=1024;
+    size=0;
+    array = (T[]) new Object [maxSize];
+  }
+  
+  public int size()
+  {
+    return size;
+  }
+  
+  public boolean isEmpty()
+  {
+    return size==0;
+  }
+  
+  public void clear()
+  {
+    size=0;
+  }
+  
+  public boolean isFull()
+  {
+    return size==array.length;
+  }
+  
+  
+  
+  private int size;
+  private T[] array;
+}

@@ -1,0 +1,3 @@
+Média:13
+Número de alunos:4
+Número de positivas:3
