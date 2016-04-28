@@ -1,6 +1,6 @@
 import static java.lang.System.*;
 
-public class outro1 {
+public class alterarString {
    public static void main(String[] args) {
 
    	if (args.length == 0) return;
