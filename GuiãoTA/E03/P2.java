@@ -22,7 +22,7 @@ public class P2 {
 
    public static String substituir (String analisar, int index, String vazia, String numInv) {
 
-      if (analisar.length() == index) return vazia;
+      if (analisar.length() == index) return vazia + numInv;
       
       if (!Character.isLetter(analisar.charAt(index))) {
 
