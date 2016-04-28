@@ -4,7 +4,7 @@ public class p93
 {
    static public void main(String[] args)
    {
-      Valores valor = new Valores();
+      Val valor = new Val();
       if (args.length != 1)
       {
          err.println("Test sorting algorithms for a N number array.");
@@ -119,9 +119,9 @@ public class p93
     * Requires:   a!=null and 0 <= start <= end <= a.length
     * Ensures:  The elements a[k] with start <= k < end are sorted.  the remaining elements are not changed.
     */
-   static Valores sequentialSort(int[] a, int start, int end)
+   static Val sequentialSort(int[] a, int start, int end)
    { 
-      Valores valor = new Valores();
+      Val valor = new Val();
       valor.compar = 0;
       valor.swap = 0;
       assert a!=null;
@@ -142,8 +142,8 @@ public class p93
       assert isSorted(a, start, end); // checking for possible incorrections of the algorithm!
       return valor;
    }
-   static Valores bubbleSort(int[] a, int start, int end) {
-      Valores valor = new Valores();
+   static Val bubbleSort(int[] a, int start, int end) {
+      Val valor = new Val();
       valor.compar = 0;
       valor.swap = 0;
      
@@ -164,8 +164,8 @@ public class p93
       while(swapExists);
       return valor;
    }
-   static Valores insertionSort(int[] a, int start, int end){
-      Valores valor = new Valores();
+   static Val insertionSort(int[] a, int start, int end){
+      Val valor = new Val();
       for(int i=start+1; i < end; i++) {
         int j;
         int temp = a[i];
@@ -176,8 +176,8 @@ public class p93
       }
       return valor;
    }
-   static Valores mergeSort(int[] a, int start, int end) {
-      Valores  valor = new Valores();
+   static Val mergeSort(int[] a, int start, int end) {
+      Val  valor = new Val();
       assert a!= null;
       if(end - start > 1) {
           int middle=(start+end)/2;
@@ -188,8 +188,8 @@ public class p93
       assert isSorted(a, start, end);
       return valor;
    }
-   static Valores mergeSubarray(int[] a, int start, int middle, int end) {
-      Valores  valor = new Valores();
+   static Val mergeSubarray(int[] a, int start, int middle, int end) {
+      Val  valor = new Val();
       int[] b = new int[end-start];
       int i1 = start;
       int i2 = middle;
@@ -244,6 +244,6 @@ public class p93
    }
 }
 
-class Valores {
+class Val {
     int swap, compar;
 }
