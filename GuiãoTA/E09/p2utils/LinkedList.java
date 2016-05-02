@@ -211,7 +211,7 @@ public class LinkedList<E> {
     Voltamos a repetir o processo, mas aumentamos o contador para 4:
         Verificar a primeira condição -> "contador > size": como o contador é menor do que o size passa para a seguinte condição;
         Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
-        Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 3 (encontra-se no intervalo do start e do end) então:
+        Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 4 (encontra-se no intervalo do start e do end) então:
         Contador ->    (4)(5)(6)
         "Casa" ->      [1][3][2]
             Remover a primeira casa --> --> [3][2];
