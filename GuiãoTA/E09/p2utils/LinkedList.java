@@ -185,9 +185,9 @@ public class LinkedList<E> {
 
     [2][5][8][1][3]
     Size = 5;
-    Queremos remover os elementos entre a "casa" 2 e 4;
+    Queremos remover os elementos entre a "casa" 2(start) e 4(end);
     O contador começa em 1:
-        Verificar a primeira condição -> "contador > size": como o contador é menor do que o size passa para a seguinte condição;
+        Verificar a primeira condição -> "contador > size": como o contador é menor ou igual do que o size passa para a seguinte condição;
         Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
         Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 1, então seguimos para o else:
         Contador ->    (1)(2)(3)(4)(5)
@@ -195,29 +195,39 @@ public class LinkedList<E> {
             Adicionar no fim o elemento da casa correspondente ao contador nº1 --> --> [2][5][8][1][3]"[2]"
             Remover a primeira casa --> --> [5][8][1][3][2];
     Voltamos a repetir o processo, mas aumentamos o contador para 2:
-        Verificar a primeira condição -> "contador > size": como o contador é menor do que o size passa para a seguinte condição;
+        Verificar a primeira condição -> "contador > size": como o contador é menor ou igual do que o size passa para a seguinte condição;
         Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
         Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 2 (encontra-se no intervalo do start e do end) então:
         Contador ->    (2)(3)(4)(5)(6)
         "Casa" ->      [5][8][1][3][2]
             Remover a primeira casa --> --> [8][1][3][2];
     Voltamos a repetir o processo, mas aumentamos o contador para 3:
-        Verificar a primeira condição -> "contador > size": como o contador é menor do que o size passa para a seguinte condição;
+        Verificar a primeira condição -> "contador > size": como o contador é menor ou igual do que o size passa para a seguinte condição;
         Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
         Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 3 (encontra-se no intervalo do start e do end) então:
         Contador ->    (3)(4)(5)(6)
         "Casa" ->      [8][1][3][2]
             Remover a primeira casa --> --> [1][3][2];
     Voltamos a repetir o processo, mas aumentamos o contador para 4:
-        Verificar a primeira condição -> "contador > size": como o contador é menor do que o size passa para a seguinte condição;
+        Verificar a primeira condição -> "contador > size": como o contador é menor ou igual do que o size passa para a seguinte condição;
         Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
-        Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 4 (encontra-se no intervalo do start e do end) então:
+        Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 4 (não se encontra no intervalo do start e do end) então:
         Contador ->    (4)(5)(6)
         "Casa" ->      [1][3][2]
-            Remover a primeira casa --> --> [3][2];
+            Adicionar a primeira casa ao fim da lista --> --> [1][3][2][1]
+            Remover a primeira casa --> --> [3][2][1];
     Voltamos a repetir o processo, mas aumentamos o contador para 5:
-        Verificar a primeira condição -> "contador > size": como o contador não é menor do que o size não passa para a seguinte condição, não faz nada;
-        A nossa lista ficou com a seguinte forma: [3][2];
+        Verificar a primeira condição -> "contador > size": como o contador é menor ou igual do que o size passa para a seguinte condição;
+        Verificar a segunda condição -> "a "casa" é vazia": como a "casa" é diferente de vazio então passa para a seguinte condição;
+        Verificar se o contador está entre o start (2) e o end-1 (4-1): como o contador está em 5 (não se encontra no intervalo do start e do end) então:
+        Contador ->    (5)(6)(7)
+        "Casa" ->      [3][2][1]
+            Adicionar a primeira casa ao fim da lista --> --> [3][2][1][3]
+            Remover a primeira casa --> --> [2][1][3];
+    Voltamos a repetir o processo, mas aumentamos o contador para 6:
+        Verificar a primeira condição -> "contador > size": como o contador não é menor ou igual do que o size, não faz nada!
+        A nossa lista ficou: [2][1][3];
+
 
     */
 
