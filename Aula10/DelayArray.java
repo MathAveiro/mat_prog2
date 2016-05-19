@@ -19,9 +19,17 @@ public class DelayArray<E> {
    @SuppressWarnings(value = "unchecked")  // sem isto, dá warning!
    public DelayArray(int size, E init) {
       assert size >= 0;
+
       // FALTA criar array de size elementos de tipo E (tem truque!)
       
+      buffer = (E[]) new Object[size];
+      
       // FALTA encher buffer com size amostras com o valor "init"
+      for (int i = 0;i < size ;i++ ) {
+        buffer[i] = init;
+      }
+
+      next = buffer.length;
 
       // Invariante:
       assert size()==size: String.format("Delay line size should be %d", size);
@@ -36,7 +44,15 @@ public class DelayArray<E> {
     * @param x  A amostra atual que é acrescentada no fim da linha.
     */
    public void in(E x) {
+
       // FALTA colocar x na posição next e incrementar next,
+        
+      if (next == size()) next = 0;
+
+      buffer [next] = x;
+
+      next++;
+
       // mas "dar a volta" se next == length!
       
    }
@@ -48,6 +64,10 @@ public class DelayArray<E> {
     */
    public E get(int t) {
       assert -size() <= t && t < 0;
+      if (next + t >= 0) return buffer[next+t]; 
+      else {
+        return buffer[-t-1];
+      }
       // FALTA devolver amostra da posição (next+t), mas "dar a volta" se < 0!
       
    }

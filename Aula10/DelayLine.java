@@ -42,7 +42,7 @@ public class DelayLine<E> {
    
    /** Valor da amostra do instante t.
     * get(-1) devolve a última amostra armazenada na linha,
-    * get(-2) devolve a penúltima e assim sucessivamente.
+    * get(-2) devolve a penúltima e assim sucessivamente. 
     * Requer que -size() <= t < 0.
     */
    public E get(int t) {
