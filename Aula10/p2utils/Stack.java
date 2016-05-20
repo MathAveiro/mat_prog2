@@ -22,27 +22,20 @@ public class Stack<E> {
     */
    public int size() { return list.size(); }
 
-   public String toString() { 
-
-    String nova = new String();
-
-    
-
-    for (int i = list.toString().length() - 1; i >=0 ; i--) {
-      
-      nova += list.toString().charAt(i);
-
-    }
-
-    return nova;
-
-  }
-
    /**
     * Checks if the stack is empty
     * @return  {@code true} if stack empty, otherwise {@code false}.
     */
    public boolean isEmpty() { return list.isEmpty(); }
+
+   public String toString() {
+      String str = list.toString();
+      String n = "";
+      for(int i = 0; i < list.size(); i++) {
+        n = list.get(i) + " " + n;
+      }
+      return n;
+   }
 
    private LinkedList<E> list = new LinkedList<E>();
 }
