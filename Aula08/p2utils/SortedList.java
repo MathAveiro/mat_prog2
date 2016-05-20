@@ -55,7 +55,7 @@ public class SortedList<E extends Comparable<E>> {
    public boolean isSorted() { 
       if (size < 2)
          return true;
-      return isSorted(first,first.next);
+      return isSorted(first,first.next); 
    }
    private boolean isSorted(Node <E> prev,Node <E> n) {
       if (n == null) return true;
