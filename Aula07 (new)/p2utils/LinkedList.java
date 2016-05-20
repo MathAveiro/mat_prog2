@@ -70,159 +70,124 @@ public class LinkedList<E> {
          last = null;
    }
    
-   //-----------------------------------//
+   public LinkedList<E> clone() {
    
-   public LinkedList clone () {   
-       
-       return clone (first);
-       
-   }
+    LinkedList<E> newlist = new LinkedList<E>();
    
-   private LinkedList clone (Node <E> n) {
-    
-       if (n == null) return new LinkedList <E>();
-       
-       else {
-            
-          LinkedList <E> newList = clone (n.next);
-           
-           newList.addFirst(n.elem); 
-           
-           return  newList;
-           
-       }     
-           
+    return clone(first, newlist);
+   
    }
 
-   public LinkedList reverse () {   
-       
-       return reverse (first);
-       
-   }
+   private LinkedList<E> clone(Node<E> first, LinkedList<E> newlist) {
+
+    if(first==null) return newlist;
    
-   private LinkedList reverse (Node <E> n) {
-    
-        
-       if (n == null) return new LinkedList <E>();
-       
-       else {
-            
-           LinkedList <E> newList = reverse (n.next);
-           
-           newList.addLast(n.elem); 
-           
-           return  newList;
-           
-       }     
-           
+    else {
+   
+      newlist.addLast(first.elem);
+   
+      return clone(first.next, newlist);
+   
+    }
+   
    }
 
-   public E get (int pos) {   
-       
-       return get(pos, first, 0);
-       
-   }
-   
-   private E get (int pos ,Node <E> n, int i) {
-    
-       if (pos == i) return n.elem;
-       
-       else {
-            
-           return  get(pos, n.next, i+1);
-           
-       }     
-           
-   }
-   
-   public LinkedList concatenate (LinkedList <E> lst) {   
-       
-       LinkedList <E> newList = lst.clone();
-       
-       return concatenate (newList, first);
-       
-   }
-   
-   private LinkedList concatenate (LinkedList lst, Node <E> elem) {
-        
-       if (elem == null) return  lst;
-       
-       else {
-            
-           lst = concatenate (lst, elem.next);
-           
-           lst.addFirst(elem.elem);
-           
-           return  lst;
-           
-       }     
-           
-   }
-   
-   public boolean contains (E e) {
-       
-       return contains (first, e);
-       
-   }
-   
-   private boolean contains (Node <E> n, E e) {
-       
-       if (n == null) return false;
-       
-       if (n.elem.equals(e)) return true;
-       
-       return contains (n.next, e);
-       
-   }
-   
-    public void remove(E e) {
+   public LinkedList<E> reverse() {
 
-      assert contains(e);
+    LinkedList<E> newlist = new LinkedList<E>();
 
-      first = remove(e, first);
+    return reverse(first, newlist);
 
-      size--;
    }
-   private Node<E> remove(E e, Node<E> n) {
 
-      if(n.elem.equals(e)) return n.next;
+   private LinkedList<E> reverse(Node<E> first, LinkedList<E> newlist) {
 
-      n.next = remove(e, n.next);
+    if(first==null) return newlist;
+
+    else {
       
-      return n;
+      newlist.addFirst(first.elem);
+
+      return reverse(first.next, newlist);
+    }
+
    }
+
+   public E get(int pos) {
+
+    return get(pos, first, 0);
    
-   /*public void remove (E e) {
-       
-       remove(first, e); 
-       
    }
+
+   private E get(int pos, Node<E> first, int index) {
+
+    if(pos == index) return first.elem;
+
+    else return get(pos, first.next, index+1);
+
+   }
+
+   public LinkedList<E> concatenate(LinkedList<E> lst) {
+
+    LinkedList<E> newlist = clone();
+
+    return concatenate(lst, lst.first, newlist);
+
+   }
+
+   private LinkedList<E> concatenate(LinkedList<E> lst, Node<E> n, LinkedList<E> newlist) {
+
+    if(n == null) return newlist;
+
+    else {
+      
+      newlist.addLast(n.elem);
+
+      return concatenate(lst, n.next, newlist);
+
+    }
+
+   }
+
+   public boolean contains(E e) {
+
+    return contains(e, first);
+
+   }
+
+   private boolean contains(E e, Node<E> first) {
+
+    if(first == null) return false;
+
+    else if(first.elem.equals(e)) return true;
+
+    else return contains(e, first.next);
+
+   }
+
+   public void remove(E e) {
+
+    remove(e, null, first);
+
+    size--;
    
-   private void remove (Node <E> n, E e) {
-       
-       assert contains (e);
-       
-       if (get(0).equals(e)) {
-       
-            removeFirst();
-           
-       } 
-       
-       else if (n.next.elem.equals(e)) {
-              
-           n.next = n.next.next;
-           
-           size--; 
-        
-           return;
-           
-       } else {
-           
-           remove (n.next, e);
-            
-       }
-       
-   }*/
+   }
+
+   private void remove(E e, Node<E> beforeFirst,Node<E> first) {
+
+    if(first == null) return;
+
+    else if(first.elem.equals(e)) {
+     
+      beforeFirst.next = first.next;
+     
+      return;
+    
+    }
+
+    else remove(e, first, first.next);
+
+   }
 
    private Node<E> first = null;
    private Node<E> last = null;
