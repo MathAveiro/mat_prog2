@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.*;
 import p2utils.*;
 
-public class P112 {
+public class P113 {
 
    static Scanner sc = new Scanner(System.in);
 
@@ -74,6 +74,8 @@ public class P112 {
          out.printf("%-20s:  %3d [%.2f]\n", array[i], keylist.get(array[i]), (keylist.get(array[i]).doubleValue())/(total)*100);
 
       }
+
+      //System.out.println(keylist.toString());
 
    }
 
