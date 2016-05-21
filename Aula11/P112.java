@@ -71,9 +71,11 @@ public class P112 {
 
          double freq = keylist.get(array[i])/total;
 
-         out.printf("%15s:  %5d [%.2f]\n", array[i], keylist.get(array[i]), (keylist.get(array[i]).doubleValue())/(total)*100);
+         out.printf("%-20s:  %3d [%.2f]\n", array[i], keylist.get(array[i]), (keylist.get(array[i]).doubleValue())/(total)*100);
 
       }
+
+      //System.out.println(keylist.toString());
 
    }
 

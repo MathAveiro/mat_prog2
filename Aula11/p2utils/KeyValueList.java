@@ -29,20 +29,26 @@ public class KeyValueList<E> {
     */
    public boolean set(String k,E e) {
       int prev_size = size;
-      first = set(first,k,e);
+      first = set(null, first,k,e);
       assert contains(k) && get(k).equals(e);
       return size>prev_size;
    }
-   private KeyValueNode<E> set(KeyValueNode<E> n,String k,E e) {
+   private KeyValueNode<E> set(KeyValueNode<E> a, KeyValueNode<E> n,String k,E e) {
       if (n==null) {
          KeyValueNode<E> newnode = new KeyValueNode<E>(k,e);
+         size++;
+         return newnode;
+      }
+      if (n.key.compareTo(k)>0) {
+         KeyValueNode<E> newnode = new KeyValueNode<E>(k,e,n);
+         if(a!=null)a.next=newnode;
          size++;
          return newnode;
       }
       if (n.key.equals(k)) {
          n.elem = e;
       }
-      else n.next = set(n.next,k,e);
+      else n.next = set(n, n.next,k,e);
       return n;
    }
 
@@ -101,9 +107,25 @@ public class KeyValueList<E> {
    private boolean contains(KeyValueNode<E> n,String k) {
       if (n == null) return false;
       if (n.key.equals(k)) return true; 
+      if (n.key.compareTo(k)>0) return false;
       return contains(n.next,k);
    }
 
+   public String toString() {
+      String str = new String();
+      return "{" + toString(str, first);
+   }
+   private String toString(String str, KeyValueNode<E> n) {
+    if(n.next==null) {
+      str = str + "(" + n.key + ", " + get(n.key) + ")";
+      return str + "}";
+    }
+    else {
+      str = str + "(" + n.key + ", " + get(n.key) + ")" + ",  ";
+      return toString(str, n.next);
+    }
+   }
+   private KeyValueNode<E> last = null;
    private KeyValueNode<E> first = null;
    private int size = 0;
 }
