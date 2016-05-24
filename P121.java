@@ -19,7 +19,7 @@ public class P121
       out.println();
       out.println("------------------------");
 
-      out.println(ht);
+      out.println(ht.toString1());
    }
 }
 
