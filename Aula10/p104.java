@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import p2utils.*;
 public class p104 {
+
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		Stack<Double> stack = new Stack<Double>();
