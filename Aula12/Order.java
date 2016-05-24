@@ -5,8 +5,10 @@ class Order {
    final int quantity;
 
    Order(String prod,String client,int quant) {
+
       prodName = prod;
       clientName = client;
       quantity = quant;
+
    }
 }
