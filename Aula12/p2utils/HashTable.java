@@ -75,7 +75,11 @@ public class HashTable<E>
       return result;
    }
 
+<<<<<<< HEAD
       public String [] keys () {
+=======
+   public String [] keys () {
+>>>>>>> dde380dedd5c74137ccbd9e3f1185487d355bd13
 
       int cont = 0;
 
@@ -109,6 +113,29 @@ public class HashTable<E>
 
    }
 
+<<<<<<< HEAD
+=======
+   public String toString1() {
+
+      String elemento = "{ ";
+
+      String [] lista = keys();
+
+      for (int j = 0; j < lista.length; j++) {
+
+         elemento += "(" + lista[j] + "," + get(lista[j]) + ")";
+
+         if (j == lista.length-1) elemento += " }";
+
+         else elemento += ",";
+         
+      }
+
+      return elemento;
+
+   }
+
+>>>>>>> dde380dedd5c74137ccbd9e3f1185487d355bd13
    private KeyValueList<E>[] array;
    private int size = 0;
 }
