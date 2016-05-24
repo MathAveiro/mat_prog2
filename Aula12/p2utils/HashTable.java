@@ -75,11 +75,7 @@ public class HashTable<E>
       return result;
    }
 
-<<<<<<< HEAD
-      public String [] keys () {
-=======
    public String [] keys () {
->>>>>>> dde380dedd5c74137ccbd9e3f1185487d355bd13
 
       int cont = 0;
 
@@ -113,8 +109,6 @@ public class HashTable<E>
 
    }
 
-<<<<<<< HEAD
-=======
    public String toString1() {
 
       String elemento = "{ ";
@@ -135,7 +129,6 @@ public class HashTable<E>
 
    }
 
->>>>>>> dde380dedd5c74137ccbd9e3f1185487d355bd13
    private KeyValueList<E>[] array;
    private int size = 0;
 }
