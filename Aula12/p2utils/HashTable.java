@@ -75,6 +75,40 @@ public class HashTable<E>
       return result;
    }
 
+      public String [] keys () {
+
+      int cont = 0;
+
+      for (int i = 0; i < array.length ; i++) {
+
+         String [] lista = array[i].keys();
+
+         for (int k = 0; k < lista.length; k++) {
+            
+            cont += 1;
+
+         }
+
+      }
+
+      String [] keys = new String [cont];
+
+      int j = 0;
+
+      for (int i = 0; i < array.length ; i++) {
+
+         String [] a = array[i].keys();
+
+         arraycopy(a, 0, keys, j, a.length);
+
+         j += a.length;
+
+      }
+
+      return keys;
+
+   }
+
    private KeyValueList<E>[] array;
    private int size = 0;
 }
