@@ -6,7 +6,6 @@ public class P103 {
    public static void main(String[] args) throws IOException {
       Scanner sf = new Scanner(new File("temperaturas.txt"));
       Scanner sc = new Scanner(new File("temperaturas.txt"));
-
       printAverage(sf, 24, sc);
       sf.close();
    }
