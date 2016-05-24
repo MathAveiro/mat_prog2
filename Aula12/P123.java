@@ -17,10 +17,12 @@ public class P123 {
 
 		String[] argsTemp = args[0].split(" ");
 
+		System.out.print("A list of numbers: ");
+
 		for(int i = 0; i < argsTemp.length; i++) {
 			if(!numb.contains(argsTemp[i])) {
 				String[] newTemp = argsTemp[i].split("-");
-				for(int j = 0; j < newTemp.length; j++) System.out.print(numb.get(newTemp[j]) + " ");
+				for(int j = 0; j < newTemp.length; j++) if(numb.contains(newTemp[j])) System.out.print(numb.get(newTemp[j]) + " ");
 			}
 			else System.out.print(numb.get(argsTemp[i]) + " ");
 		}
