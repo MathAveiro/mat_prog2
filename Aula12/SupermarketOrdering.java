@@ -57,7 +57,7 @@ class SupermarketOrdering {
 
     	for (int i = 0; i < produtos.length; i++) {
     		
-    		str += " " + produtos[i] + ":" + encomendas.get(produtos[i]);
+    		str += produtos[i] + ":" + encomendas.get(produtos[i]) + " ";
 
     	}
 
