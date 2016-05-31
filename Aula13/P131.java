@@ -2,6 +2,7 @@
 import static java.lang.System.*;
 import p2utils.BinarySearchTree;
 
+
 public class P131
 {
    public static void main(String[] args)
