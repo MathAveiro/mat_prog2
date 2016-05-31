@@ -42,7 +42,7 @@ public class P124 {
 		
 		}
 		
-		calc(lista, lista.first(), 0, lista.size(), 0, final1);
+		calc(lista, lista.first(), 0, lista.size(), final1);
 
 		int total = soma(final1, 0);
 
@@ -50,7 +50,7 @@ public class P124 {
 
 	}
 
-	public static void calc (LinkedList<Integer> lista, int elemento, int total, int size, int cont, LinkedList<Integer> final1) {
+	public static void calc (LinkedList<Integer> lista, int elemento, int total, int size, LinkedList<Integer> final1) {
 
 		if (lista.first() != null) {
 
@@ -64,7 +64,25 @@ public class P124 {
 
 				lista.removeFirst();
 
-				if (elemento < segundoelemento) {
+				if(lista.isEmpty()) {
+
+					if (elemento <= segundoelemento) {
+
+						System.out.println(elemento * segundoelemento);
+
+						final1.addLast(elemento * segundoelemento);
+
+						return;
+
+					} else {
+
+						final1.addLast(elemento + segundoelemento);
+
+						return;
+
+					}
+
+				} else if (elemento <= segundoelemento) {
 
 					total = (elemento * segundoelemento);
 					
@@ -86,7 +104,7 @@ public class P124 {
 
 				int elementoapassar = lista.first();
 
-				calc (lista, elementoapassar, 0, size, cont+1, final1);
+				calc (lista, elementoapassar, 0, size, final1);
 
 			} else {
 
