@@ -13,7 +13,7 @@ public class CityTraveler
 
 		String[] keys = visitas.keys();
 		for(int i = 0; i < keys.length; i++) {
-			out.printf("%s: %s\n", keys[i], visitas.get(keys[i]));
+			out.printf("%-15s: %s\n", keys[i], visitas.get(keys[i]));
 		}
 	}
 
