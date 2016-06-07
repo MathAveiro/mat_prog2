@@ -57,7 +57,6 @@ public class Restaurante
 			}
 		}
 		processarPedidos(storage, pedidos);
-
    }
    public static void processarPedidos(HashTable<Integer> storage, Queue<HashTable<Integer>> pedidos){
    		HashTable<Integer> pedido;
