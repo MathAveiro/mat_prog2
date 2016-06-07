@@ -11,22 +11,23 @@ public class Restaurante
 			File f = new File(args[i]);
 			readData(f, storage, pedidos);
 		}
-		out.print("Comida em stock: ");
+		out.println();
+		out.println("Comida em stock: ");
 		String [] ingr = storage.keys();
 		for (int i = 0; i < ingr.length; i++) {
 			int quant = storage.get(ingr[i]);
-			if (quant != 0)	out.printf("\n  %s:%d", ingr[i], quant);
+			out.printf("  %s: %d\n", ingr[i], quant);
 		}
-		Queue<HashTable<Integer>> pedidosPendentes = pedidos;
+		out.println();
 		do{
-			out.printf("\nRefeição pendente: ");
-			String [] filaPendente = pedidosPendentes.peek().keys();
-			for (int i = 0; i < filaPendente.length; i++) {
-				int quant = pedidosPendentes.peek().get(filaPendente[i]);
-				out.printf("  %s:%d", filaPendente[i], quant);
+			out.print("Refeição pendente:  ");
+			String[] temp = pedidos.peek().keys();
+			for(int i = 0; i < pedidos.peek().size(); i++) {
+				out.print(temp[i] + ":"+pedidos.peek().get(temp[0])+" ");
 			}
-			pedidosPendentes.out();
-		}while(!pedidosPendentes.isEmpty());
+			pedidos.out();
+			out.println();
+		}while(!pedidos.isEmpty());
    }
    public static void readData(File f, HashTable<Integer> storage, Queue<HashTable<Integer>> pedidos) throws IOException {
 		Scanner scf = new Scanner(f);
@@ -43,7 +44,7 @@ public class Restaurante
 				}
 				break;
 				case "saida:":
-				HashTable <Integer> pedido = new HashTable<Integer>(partsLine.length);
+				HashTable<Integer> pedido = new HashTable<Integer>(partsLine.length);
 				for (int j = 1; j < partsLine.length; j++) {
 					String [] keyPartsLine = partsLine[j].split(":", 2);
 					pedido.set(keyPartsLine[0], Integer.parseInt(keyPartsLine[1]));
@@ -53,19 +54,17 @@ public class Restaurante
 				default:
 				err.printf("%s: formato inválido\n", f);
 				exit(1);
-			}				
+			}
 		}
-		do{
-			if(!gotEnough(storage, pedidos.peek())) return;
-			processarPedidos(storage, pedidos);
-		}while(!pedidos.isEmpty());
+		processarPedidos(storage, pedidos);
 
-		scf.close();
    }
    public static void processarPedidos(HashTable<Integer> storage, Queue<HashTable<Integer>> pedidos){
    		HashTable<Integer> pedido;
-	   	if (!pedidos.isEmpty()){
-	   		pedido = pedidos.peek();
+   		int cont = pedidos.size();
+   		int j = 0;
+   		while(!pedidos.isEmpty() && j != cont){
+   			pedido = pedidos.peek();
    			if(gotEnough(storage, pedido)) {
    				pedidos.out();
    				out.printf("Refeição servida: ");
@@ -74,10 +73,12 @@ public class Restaurante
    					int quant = storage.get(ingr[i]);
    					int quantPedida = pedido.get(ingr[i]);
    					storage.set(ingr[i], quant-quantPedida);
-   					out.printf("  %s:%d", ingr[i], quantPedida);
+   					out.printf(" %s:%d", ingr[i], quantPedida);
+   					if(storage.get(ingr[i])==0) storage.remove(ingr[i]);
    				}
    				out.println();
    			}
+   			j++;
    		}
    }
    public static boolean gotEnough(HashTable<Integer> storage, HashTable<Integer> pedido){
