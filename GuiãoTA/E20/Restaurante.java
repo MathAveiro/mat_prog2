@@ -15,7 +15,7 @@ public class Restaurante
 		String [] ingr = storage.keys();
 		for (int i = 0; i < ingr.length; i++) {
 			int quant = storage.get(ingr[i]);
-			if (quant != 0)	out.printf("\n  %s: %d", ingr[i], quant);
+			if (quant != 0)	out.printf("\n  %s:%d", ingr[i], quant);
 		}
 		Queue<HashTable<Integer>> pedidosPendentes = pedidos;
 		do{
@@ -23,7 +23,7 @@ public class Restaurante
 			String [] filaPendente = pedidosPendentes.peek().keys();
 			for (int i = 0; i < filaPendente.length; i++) {
 				int quant = pedidosPendentes.peek().get(filaPendente[i]);
-				out.printf("  %s: %d", filaPendente[i], quant);
+				out.printf("  %s:%d", filaPendente[i], quant);
 			}
 			pedidosPendentes.out();
 		}while(!pedidosPendentes.isEmpty());
@@ -74,7 +74,7 @@ public class Restaurante
    					int quant = storage.get(ingr[i]);
    					int quantPedida = pedido.get(ingr[i]);
    					storage.set(ingr[i], quant-quantPedida);
-   					out.printf("  %s: %d", ingr[i], quantPedida);
+   					out.printf("  %s:%d", ingr[i], quantPedida);
    				}
    				out.println();
    			}
