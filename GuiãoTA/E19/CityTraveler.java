@@ -5,7 +5,7 @@ import p2utils.*;
 public class CityTraveler
 {
 	public static void main(String[] args)throws IOException {
-		HashTable<String> visitas = new HashTable<String>(100);
+		HashTable<LinkedList<String>> visitas = new HashTable<LinkedList<String>>(100);
 		for(int i = 0; i < args.length; i++) {
 			addVisitas(visitas, args[i]);
 		}
@@ -16,17 +16,20 @@ public class CityTraveler
 		}
 	}
 
-	public static void addVisitas(HashTable<String> visitas, String cidade)throws IOException {
+	public static void addVisitas(HashTable<LinkedList<String>> visitas, String cidade)throws IOException {
 		File f = new File(cidade);
 		Scanner scf = new Scanner(f);
 		while(scf.hasNextLine()) {
 			String nome = scf.nextLine();
-			String temp = "";
 			if(visitas.contains(nome)) {
-				temp = visitas.get(nome);
-				visitas.set(nome, temp+" "+cidade);
+				visitas.get(nome).addFirst(cidade);
+				visitas.set(nome, visitas.get(nome));
 			}
-			else visitas.set(nome, cidade);
+			else {
+				LinkedList<String> temp = new LinkedList<String>();
+				temp.addFirst(cidade);
+				visitas.set(nome, temp);
+			}
 		}
 	}
 }
