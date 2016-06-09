@@ -36,7 +36,7 @@ public class PhoneCalls {
 			String numeroNome = scf.nextLine();
 			String []arrayNumeroNome = numeroNome.split("\\ ",2);
 			numeros.set(arrayNumeroNome[0], arrayNumeroNome[1]);
-			out.println(arrayNumeroNome[0]);
+			//out.println(arrayNumeroNome[0]);
 		}
 		scf.close();
 	}
