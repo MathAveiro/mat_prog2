@@ -36,12 +36,12 @@ public class PhoneCalls {
 			String numeroNome = scf.nextLine();
 			String []arrayNumeroNome = numeroNome.split("\\ ",2);
 			numeros.set(arrayNumeroNome[0], arrayNumeroNome[1]);
+			out.println(arrayNumeroNome[0]);
 		}
 		scf.close();
 	}
 	public static void numCall (KeyValueList<String> numeros, File f, KeyValueList<String> lista, KeyValueList<String> lista2) throws IOException {
 		Scanner scf = new Scanner(f);
-
 		while(scf.hasNextLine()){
 			String chamada = scf.nextLine();
 			String [] arrayNumeroNome = chamada.split("\\ ",3);
