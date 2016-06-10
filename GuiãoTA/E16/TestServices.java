@@ -39,9 +39,9 @@ public class TestServices
       sm.queueFor("tomas","A");
       sm.queueFor("marta","A");
       sm.queueFor("antonia","A");
-      //String [] a = sm.alphabeticalClientList("A");
+      String [] a = sm.alphabeticalClientList("A");
       out.print("Lista alfabetica dos clientes na fila do serviço A: ");
-      //for(int i=0; i<a.length; i++) out.print(a[i]+" ");
+      for(int i=0; i<a.length; i++) out.print(a[i]+" ");
       out.println();
 
       

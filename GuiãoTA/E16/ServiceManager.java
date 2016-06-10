@@ -137,6 +137,58 @@ public class ServiceManager
       arraycopy(b, 0, a, start, end-start);
    }
 
+   public static void sort(String[] a, int start, int end) {
+      assert a!= null;
+      if(end - start > 1) {
+          int middle=(start+end)/2;
+          sort(a, start, middle);
+          sort(a, middle, end);
+          mergeSubarray(a, start, middle, end);          
+      }
+      //assert isSorted(a, start, end);
+   }
+   public static void mergeSubarray(String[] a, int start, int middle, int end) {
+      String[] b = new String[end-start];
+      int i1 = start;
+      int i2 = middle;
+      int j = 0;
+      while(i1 < middle && i2 < end) {
+          if(a[i1].compareTo(a[i2])<0) {
+            b[j]=a[i1];
+            i1++;
+          }
+          else {
+            b[j]=a[i2];
+            i2++;
+          }
+          j++;
+      }
+      while(i1 < middle) {
+        b[j] = a[i1];
+        j++;
+        i1++;
+      }
+      while(i2 < end) {
+        b[j] = a[i2];
+        j++;
+        i2++;
+      }
+      arraycopy(b, 0, a, start, end-start);
+      //out.println(1);
+      /*for (int i = 0; i < b.length; i++) {
+         out.println(b[i]);
+      }*/
+   }
+
+   public String[] alphabeticalClientList(String serviceName) {
+
+      assert validServiceName(serviceName);
+      int index = findService(serviceName);
+      String[] array = services[index].clientsInQueue();
+      //out.println(array[0]);
+      sort(array, 0, array.length);
+      return array;
+   }
    public void queueFor(String clientName, String serviceName) {
 
       assert validServiceName(serviceName);
