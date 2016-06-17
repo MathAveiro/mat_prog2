@@ -60,6 +60,51 @@ public class ContainerTerminal {
     }
     return -1;
   }
+
+  public void store(Container c) {
+    assert !isFull();
+    int k = 0;
+    while (sa[k].isFull()) {
+      k++;
+    }
+    sa[k].push(c);
+    numcontainers++;
+
+    //c.incrementOps();
+
+    logContainerInfo(c);
+
+    assert numcontainers>0;
+  }
+
+  public Container retrieve(String type) {
+    int stack = 0;
+    if(containerTypeExists(type))
+      stack = findStackContaining(type);
+      for(int i = 0; i <= sa[stack].search(type); i++) {
+        sa[stack].top().incrementOps();
+        sa[findOtherStack(stack)].push(sa[stack].top());
+        sa[stack].pop();
+      }
+      logContainerInfo(sa[stack].top());
+      Container temp = sa[stack].top();
+      sa[stack].pop();
+      numcontainers--;
+      return temp;
+  }
+
+  public double averageOpsPerContainer() {
+    return averageOpsPerContainer(log, 0.0, 0);
+  }
+
+  private double averageOpsPerContainer(HistoryNode log, double ops, int numbs) {
+    if(log==null) return ops/numbs;
+    else {
+      ops = ops+log.numops;
+      numbs++;
+      return averageOpsPerContainer(log.next, ops, numbs);
+    }
+  }
   
   public void print() {
     out.printf("Terminal numcontainers=%d isFull=%s\n",
@@ -68,6 +113,8 @@ public class ContainerTerminal {
       out.printf("%2d: %s\n", k, sa[k].toString());
     }
   }
+
+
 
   // Log: historical log of retrieved containers: it's a linked list
   HistoryNode log;
@@ -79,5 +126,5 @@ public class ContainerTerminal {
     n.next = log;
     log = n;
   }
-  
+
 }
