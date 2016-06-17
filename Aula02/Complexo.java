@@ -1,8 +1,8 @@
-public class Complexo21 {
+public class Complexo {
 	private double re;
 	private double im;
 
-	public Complexo21(double real, double imag) {
+	public Complexo(double real, double imag) {
 		re = real;
 		im = imag;
 	}

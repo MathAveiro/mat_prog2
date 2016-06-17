@@ -9,20 +9,20 @@ public class exercicio25 {
 
 	public static void main(String[] args) {
 		int op=0;
-		Data25 data = new Data25();
+		Data data = new Data();
 		do {
 			funcaoMenu();
 			out.printf("Opção: ");
 			op = sc.nextInt();
 			switch (op) {
-				case 1: data = new Data25(); break;
+				case 1: data = new Data(); break;
 				case 2: out.printf("Dia: \n");
 						int dia = sc.nextInt();
 						out.printf("Mês: \n");
 						int mes = sc.nextInt();
 						out.printf("Ano: \n");
 						int ano = sc.nextInt();
-						data = new Data25(dia, mes, ano); break;
+						data = new Data(dia, mes, ano); break;
 				case 3: if(data.ternoInteiro()) out.printf("Data válida\n");
 						else out.printf("Data inválida\n"); break;
 				case 4: out.printf("Data: ");

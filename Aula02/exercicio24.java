@@ -1,4 +1,4 @@
-import pt.ua.prog2.Contacto24;
+import pt.ua.prog2.Contacto;
 import java.util.*;
 import java.io.*;
 import static java.lang.System.*;
@@ -10,7 +10,7 @@ public class exercicio24 {
 
 	public static void main(String[] args) {
 
-		Contacto24[] cl = new Contacto24[4];
+		Contacto[] cl = new Contacto[4];
 
 		int n;
 
@@ -24,7 +24,7 @@ public class exercicio24 {
 			out.printf("Email: ");
 			String email = sc.nextLine();
 
-			cl[n] = new Contacto24(nome, telemovel, email);
+			cl[n] = new Contacto(nome, telemovel, email);
 
 		}
 

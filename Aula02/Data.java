@@ -3,7 +3,7 @@ import java.io.*;
 import static java.lang.System.*;
 import static java.lang.Integer.*;
 
-public class Data25 {
+public class Data {
 
 	private int dia, mes, ano;
 
@@ -57,7 +57,7 @@ public class Data25 {
 		else return true; 
 	}
 
-	public Data25() {
+	public Data() {
 
 		Calendar hoje = Calendar.getInstance();
         this.dia = hoje.get(Calendar.DAY_OF_MONTH);
@@ -66,7 +66,7 @@ public class Data25 {
 
 	}
 
-	public Data25(int d, int m, int a) {
+	public Data(int d, int m, int a) {
 
 		this.dia = d;
 		this.mes = m;

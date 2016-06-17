@@ -1,16 +1,21 @@
 package pt.ua.prog2;
 
-public class Contacto24 {
+public class Contacto {
 
 	private String nome, telefone, eMail;
 	private static int contador=0;
 
-	public Contacto24(String n, String t, String e) {
+	public Contacto(String n, String t, String e) {
 		this.nome = n;
 		this.telefone = t;
 		this.eMail = e;
 		contador++;
 		funcaoValidar(this.nome);
+	}
+
+	public Contacto(String n, String t) {
+		this.nome = n;
+		this.telefone = t;
 	}
 
 	private void funcaoValidar(String n) {
