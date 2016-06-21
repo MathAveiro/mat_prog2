@@ -1,4 +1,4 @@
-import static java.lang.System.*;
+   import static java.lang.System.*;
 
 public class ServiceManager
 {
@@ -89,7 +89,6 @@ public class ServiceManager
       }
       return a;
    }
-
    // Acrescentar dados de um serviço ao histórico de serviços
    private void logServiceData(int index,String client,int time) {
       HistoryNode n = new HistoryNode();
@@ -99,13 +98,12 @@ public class ServiceManager
       n.next = first;
       first = n;
    }
-
    public int maxServiceTime() {
       return maxServiceTime(first, 0);
    }
 
    private int maxServiceTime (HistoryNode n, int tempMax) {
-      if(n.next==null) return tempMax;
+      if(n==null) return tempMax;
       if (n.time > tempMax) tempMax = n.time;
       return (maxServiceTime(n.next, tempMax));
    }
