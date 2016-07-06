@@ -44,7 +44,6 @@ public class Dock {
      Container temp = containerStack.top();
 	  containerStack.pop();
 	  return temp;
-
    }
 
    // Moves containers from the accessExtension to the dock stack
@@ -53,7 +52,7 @@ public class Dock {
       do {
          containerStack.push(accessExtension.peek());
          accessExtension.out();
-      } while(!accessExtension.isEmpty() && !stackFull());
+      } while(!accessExtension.isEmpty() || !stackFull());
 
    }
 
