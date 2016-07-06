@@ -74,6 +74,7 @@ public class Dock {
             containerStack.pop(); 
          } while (accessExtension.peek().distance < containerStack.top().distance);
          containerStack.push(accessExtension.peek());
+         accessExtension.out();
          do {
             containerStack.push(containerStackTemp.top());
             containerStackTemp.pop();
