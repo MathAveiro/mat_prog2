@@ -49,10 +49,10 @@ public class Dock {
    // Moves containers from the accessExtension to the dock stack
    public void moveFromAccessToStack() {
       assert !stackFull();
-      do {
+      while (!accessExtension.isEmpty() && !stackFull()) {
          containerStack.push(accessExtension.peek());
          accessExtension.out();
-      } while(!accessExtension.isEmpty() || !stackFull());
+      }
 
    }
 
