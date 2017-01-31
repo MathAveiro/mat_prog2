@@ -1,4 +1,4 @@
-# mat_prog2
+# Mat_prog2
 Exercícios resolvidos de Programação II
 
 Este repositório serve de suporte à resolução de exercícios de Programação II (java).
