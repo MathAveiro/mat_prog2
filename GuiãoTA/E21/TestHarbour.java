@@ -23,7 +23,6 @@ public class TestHarbour {
                        { 1000,1300,1200,1100,
                          600,500,100,
                          5000,15000,8000,10000 };
-
   
    public static void main(String[] args) {
 
